@@ -5,3 +5,4 @@
 - First Come, First Served ( `FCFS` )
 - Shortest Job First ( **Preemptive** / **Non-Preemptive** ) ( `SJF` )
 - Priority ( **Preemptive** / **Non-Preemptive** )
+- Round Robin ( `RR` )
