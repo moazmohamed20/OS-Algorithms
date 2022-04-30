@@ -11,3 +11,4 @@
 
 - First In, First Out ( `FIFO` )
 - Least Recently Used ( `LRU` )
+- Most Recently Used ( `MRU` )
