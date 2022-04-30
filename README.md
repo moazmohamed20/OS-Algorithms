@@ -13,3 +13,4 @@
 - Least Recently Used ( `LRU` )
 - Most Recently Used ( `MRU` )
 - Least Frequently Used ( `LFU` )
+- Most Frequently Used ( `MFU` )
