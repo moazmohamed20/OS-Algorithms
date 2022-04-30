@@ -15,3 +15,7 @@
 - Least Frequently Used ( `LFU` )
 - Most Frequently Used ( `MFU` )
 - Optimal
+
+## Deadlock Algorithms
+
+- Banker's Algorithm
