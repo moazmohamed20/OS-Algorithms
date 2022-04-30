@@ -19,3 +19,4 @@
 ## Deadlock Algorithms
 
 - Banker's Algorithm
+- Detection Algorithm
