@@ -16,7 +16,7 @@
 - Most Frequently Used ( `MFU` )
 - Optimal
 
-## Deadlock Algorithms
+## Deadlock Avoidance Algorithms
 
 - Banker's Algorithm
 - Detection Algorithm
