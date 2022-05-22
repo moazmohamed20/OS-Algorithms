@@ -12,8 +12,9 @@ public:
     int length() { return counter; }
     bool isFull() { return counter == size; }
     bool isEmpty() { return counter == 0; }
-    Queue(int size)
+    Queue(int init_size)
     {
+        size = init_size;
         array = new int[size];
         front = rear = counter = 0;
     }
