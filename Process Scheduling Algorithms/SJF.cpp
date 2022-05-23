@@ -19,7 +19,7 @@ void sort(Process array[], int size)
             }
 }
 
-int ShortestJobFirst(Process processes[], int size, bool primitive)
+int ShortestJobFirst(Process processes[], int size, bool preemptive)
 {
     int totalWaitTime = 0;
 
@@ -53,13 +53,13 @@ int ShortestJobFirst(Process processes[], int size, bool primitive)
         // 2) If The Process Was Ready (Arrived)
         if (minIndex != -1)
         {
-            // Don't Leave The Process Until It Is Finished
+            // Don't Leave The Process Until It Is Finished (If Not Preemptive)
             do
             {
                 cout << time << " ~ " << time + 1 << "\t\t" << list[minIndex].num << endl;
                 list[minIndex].burst--;
                 time++;
-            } while (!primitive && list[minIndex].burst > 0);
+            } while (!preemptive && list[minIndex].burst > 0);
             if (list[minIndex].burst == 0)
                 totalWaitTime += time - processes[minIndex].arrive - processes[minIndex].burst;
         }
