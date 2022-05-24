@@ -54,7 +54,7 @@ bool isSystemSafe()
         hasChanged = false;
         // Loop Through Processes
         for (p = 0; p < PN; p++)
-            // If The Procces Not Executed Before
+            // If The Proccess Not Executed Before
             if (finished[p] == 0)
             {
                 // Check: Is This Process Need Resources More Than The Available?
@@ -90,16 +90,9 @@ bool isSystemSafe()
 
 bool allocateIfSafe(int processNo, int request[RN])
 {
-    // Temporary Copies Of: The Process Original Values From All Tables
-    int tempNeed[RN], tempAlloc[RN], tempAvail[RN];
+    // Change Tables Values
     for (r = 0; r < RN; r++)
     {
-        // Store The Original Values
-        tempAlloc[r] = allocation[processNo][r];
-        tempNeed[r] = need[processNo][r];
-        tempAvail[r] = available[r];
-
-        // Change Tables Values
         allocation[processNo][r] += request[r];
         need[processNo][r] -= request[r];
         available[r] -= request[r];
@@ -108,13 +101,14 @@ bool allocateIfSafe(int processNo, int request[RN])
     if (isSystemSafe())
         return true;
 
-    // Restore The Original Values
+    // Restore Tables Values
     for (r = 0; r < RN; r++)
     {
-        allocation[processNo][r] = tempAlloc[r];
-        need[processNo][r] = tempNeed[r];
-        available[r] = tempAvail[r];
+        allocation[processNo][r] -= request[r];
+        need[processNo][r] += request[r];
+        available[r] += request[r];
     }
+
     return false;
 }
 
