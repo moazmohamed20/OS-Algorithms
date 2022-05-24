@@ -28,7 +28,7 @@ int Priority(Process processes[], int size, bool preemptive)
     sort(processes, size);
 
     // Copy Received Processes List To New List
-    Process *list = new Process[size];
+    Process list[size];
     for (int i = 0; i < size; i++)
         list[i] = processes[i];
 
