@@ -43,7 +43,7 @@ int *detectDeadlocks()
         hasChanged = false;
         // Loop Through Processes
         for (p = 0; p < PN; p++)
-            // If The Procces Not Executed Before
+            // If The Proccess Not Executed Before
             if (finished[p] == 0)
             {
                 // Check: Is This Process Request Resources More Than The Available?
